@@ -1,12 +1,44 @@
-<ion-view title="Playlists">
+<ion-view title="">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
-      </ion-item>
-    </ion-list>
+  <ion-content scroll="false" class="has-header">
+
+
+  <ion-slide-box style="height:90%;">
+
+    <ion-slide>
+      <h2>Welcome</h1>
+      <h1>2014 SPHS Engineering Forum</h1>
+      <h2>Scott Prue &amp; Sinan Bolel</h1>
+    </ion-slide>
+
+    <ion-slide>
+      <h1>YELLOW</h1>
+    </ion-slide>
+
+    <ion-slide>
+      <h1>PINK</h1>
+    </ion-slide>
+
+  </ion-slide-box>
+
+
+  <div class="bar bar-footer bar-positive">
+    
+    <div class="row">
+      <div class="col col-10 button-icon icon ion-ios7-chatboxes-outline" style="margin-top:-.625em;text-align:center;"></div>
+      <div id="featured-question" class="col col-75" style="margin-top:-.5em;">
+        <h3 class="light">How did they do that?</h3>
+      </div>
+      <div class="col col-20" style="margin-top:-.5em;text-align:center;font-size:1.5em;">
+        <i class="button-icon icon ion-ios7-people"> 5</i>
+        <i class="button-icon icon ion-ios7-chatbubble"> 3</i>
+      </div>
+    </div>
+
+  </div>
+
+
   </ion-content>
 </ion-view>
