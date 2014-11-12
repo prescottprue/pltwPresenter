@@ -8,13 +8,13 @@
         <ion-item ng-repeat="message in messageList">
           <div style="margin-left:1em;">
             <p>{{message.content}}</p>
-            <p>{{message.author}}</p>
+            <p>{{message.author || 'Anonymous'}}</p>
           </div>
           <div class="positive avatar-frame" ng-hide="message.viewedAt >= message.updatedAt" ng-show="message.viewedAt < message.updatedAt" style="position:absolute;top:20px;left:10px;right:auto;height:10px;width:10px;border-radius:50%;opacity:0.75;border:none;background-color:rgb(78, 142, 247);"></div>
         </ion-item>
 
       </ion-list>
-          <textarea ng-model="chat.newMessage" placeholder="Enter Message Here" style=""></textarea>
+          <textarea ng-model="chat.content" placeholder="Enter Message Here" style=""></textarea>
     <button ng-click="sendMessage()" class="button button-clear pull-right">Send</button>
     </ion-content>
 

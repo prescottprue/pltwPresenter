@@ -67,8 +67,10 @@ console.log('HomeCtrl');
     })
   };
   $scope.sendMessage = function() {
-    if($scope.chat.newMessage) {
-      $scope.chat.author = $rootScope.account.email;
+    if($scope.chat.content) {
+      if($rootScope.account.email) {
+        $scope.chat.author = $rootScope.account.email;
+      }
       $rootScope.library.sendMessage($scope.chat, function() {
 
       });
