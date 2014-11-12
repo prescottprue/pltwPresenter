@@ -14,6 +14,7 @@ console.log('HomeCtrl');
     $rootScope.library.userLogin($scope.loginData, function(authData){
       console.log('userLogin successful:', authData);
       $rootScope.auth = authData;
+      $rootScope.account = {email:$scope.loginData.email};
       $state.go('home');
     }, function(err){
       console.error('error logging user in',err);
@@ -28,6 +29,7 @@ console.log('HomeCtrl');
     console.log('Doing login', $scope.signupData);
     $rootScope.library.userSignup($scope.signupData, function(account){
       console.log('userLogin successful:', account);
+      $rootScope.account = account;
     }, function(err){
       console.error('error logging user in',err);
     });
@@ -52,7 +54,8 @@ console.log('HomeCtrl');
   };
   $scope.sendMessage = function() {
     if($scope.chat.newMessage) {
-      $rootScope.library.sendMessage($scope.chat.newMessage, function() {
+      $scope.chat.author = $rootScope.account.email;
+      $rootScope.library.sendMessage($scope.chat, function() {
 
       });
 

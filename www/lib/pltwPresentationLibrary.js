@@ -79,8 +79,8 @@
       sendMessage: function(argMessage, callback) {
         console.log('Send message:', arguments);
         console.log('this::::', this);
-        console.log('this.auth:', this.auth);
-        var messageObj = {content: argMessage, createdAt:Date.now()};
+        var messageObj = argMessage;
+        messageObj.createdAt =  Date.now();
         var messageRef = this.messagesRef.push(messageObj, function(){
           console.log('this::::', this);
           console.log('this.auth:', this.auth);

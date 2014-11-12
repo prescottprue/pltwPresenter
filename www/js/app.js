@@ -59,6 +59,11 @@ console.log('new library:', $rootScope.library);
         }
       }
     })
+    .state('account', {
+      url:'/account',
+      templateUrl:'templates/account.html',
+      controller:'LoginCtrl'
+    })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });
