@@ -92,6 +92,16 @@
         this.messagesRef.orderByChild('createdAt').on('value', function(messageListSnap){
           callback(messageListSnap.val());
         });
+      },
+      messageCount: function(callback) {
+        this.messagesRef.on('value', function(messagesListSnap) {
+          callback(messagesListSnap.numChildren());
+        });
+      },
+      userCount: function(callback) {
+        this.usersRef.on('value', function(usersListSnap) {
+          callback(usersListSnap.numChildren());
+        });
       }
 
   };

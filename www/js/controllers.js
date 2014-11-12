@@ -4,6 +4,7 @@ angular.module('starter.controllers', [])
 })
 .controller('HomeCtrl', function($rootScope, $scope, $state, $ionicSlideBoxDelegate) {
 console.log('HomeCtrl');
+$scope.data = {};
   $scope.goToFirstSlide = function() {
     $ionicSlideBoxDelegate.slide(0);
   };
@@ -18,6 +19,18 @@ console.log('HomeCtrl');
   $scope.goToSlideAtIndex = function(index) {
     $ionicSlideBoxDelegate.slide(index);
   };
+  $rootScope.library.messageCount(function(returnedCount){
+    $scope.data.messageCount = returnedCount;
+  console.log('messageCount', $scope.data.messageCount);
+  $scope.$apply();
+
+  });
+  $rootScope.library.userCount(function(returnedCount){
+    $scope.data.userCount = returnedCount;
+    console.log('userCount', returnedCount);
+  $scope.$apply();
+    
+  })
 })
 .controller('LoginCtrl', function($rootScope, $scope, $state) {
   // Perform the login action when the user submits the login form
