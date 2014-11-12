@@ -1,3 +1,50 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+ion-content {
+  background-color:rgb(34, 34, 34);
+}
+
+ion-slide-box {
+}
+
+.slide {
+  text-align: center;
+  position: relative;
+}
+
+.slide h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3em;
+  color: white;
+}
+
+.slide h2 {
+  font-size: 2em;
+  color: rgb(102, 102, 102);
+}
+
+#sheya {
+  width:            auto;
+  height:           50%;
+}
+
+#sheya img {
+  width:            300px;
+  height:           300px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0px -20px, center;
+}
+
+.col {
+  text-align: center;
+}
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

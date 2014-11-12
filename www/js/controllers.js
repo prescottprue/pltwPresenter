@@ -2,8 +2,22 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($rootScope, $scope, $state) {
 
 })
-.controller('HomeCtrl', function($rootScope, $scope, $state) {
+.controller('HomeCtrl', function($rootScope, $scope, $state, $ionicSlideBoxDelegate) {
 console.log('HomeCtrl');
+  $scope.goToFirstSlide = function() {
+    $ionicSlideBoxDelegate.slide(0);
+  };
+  $scope.goToLastSlide = function() {
+    $ionicSlideBoxDelegate.slide($ionicSlideBoxDelegate.slidesCount()-1);
+  };
+  $scope.updateLastSeenSlide = function(index) {
+    console.warn("Updating slide index to ",index);
+    $rootScope.slideIndex = index;
+    $ionicSlideBoxDelegate.slide($rootScope.slideIndex);
+  };
+  $scope.goToSlideAtIndex = function(index) {
+    $ionicSlideBoxDelegate.slide(index);
+  };
 })
 .controller('LoginCtrl', function($rootScope, $scope, $state) {
   // Perform the login action when the user submits the login form
