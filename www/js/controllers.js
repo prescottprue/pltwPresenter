@@ -43,6 +43,8 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
 })
+.controller('LoginCtrl', function($scope, $stateParams) {
 
+})
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
