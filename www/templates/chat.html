@@ -1,0 +1,21 @@
+    <ion-view hide-back-button="false" ng-init="init()">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">Chat</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+      <ion-item ng-show="isNull"><h2>No Messages Yet</h2></ion-item>
+        <ion-item ng-repeat="message in messageList">
+          <div style="margin-left:1em;">
+            <p>{{message.content}}</p>
+            <p>{{message.author}}</p>
+          </div>
+          <div class="positive avatar-frame" ng-hide="message.viewedAt >= message.updatedAt" ng-show="message.viewedAt < message.updatedAt" style="position:absolute;top:20px;left:10px;right:auto;height:10px;width:10px;border-radius:50%;opacity:0.75;border:none;background-color:rgb(78, 142, 247);"></div>
+        </ion-item>
+
+      </ion-list>
+          <textarea ng-model="chat.newMessage" placeholder="Enter Message Here" style=""></textarea>
+    <button ng-click="sendMessage()" class="button button-clear pull-right">Send</button>
+    </ion-content>
+
+  </view>
