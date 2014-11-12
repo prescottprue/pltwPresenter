@@ -1,4 +1,4 @@
-<div class="modal">
+<ion-view>
   <ion-header-bar>
     <h1 class="title">Login</h1>
     <div class="buttons">
@@ -6,11 +6,11 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="doLogin()">
+    <form ng-submit="login()">
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
+          <span class="input-label">Email</span>
+          <input type="text" ng-model="loginData.email">
         </label>
         <label class="item item-input">
           <span class="input-label">Password</span>
@@ -21,6 +21,9 @@
         </label>
       </div>
     </form>
+            <label class="item">
+          <button class="button button-block button-assertive" ui-sref="signup">Sign Up</button>
+        </label>
   </ion-content>
-</div>
+</ion-view>
 
